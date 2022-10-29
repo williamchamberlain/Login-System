@@ -16,11 +16,12 @@ def register_user():  #what happens with the information collected
   password_info = password.get()
   #assigns values from the entrys to information that then be put in txt
 
-  file = open(username_info  , "w")
+  file = open("usernames"  , "a")
   #the w puts it into write mode
   #file is also a variable
-  file.write(username_info + "\n")
+  file.write(username_info + ":")
   file.write(password_info)
+  file.write("\n") 
   file.close()
   #write file
 
