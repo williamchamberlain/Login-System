@@ -46,16 +46,17 @@ def login_verify():
 
   #clears field
 
-  list_of_files = os.listdir()
+  file = open("usernames", "r")
   #lists all files in the current directory
 
-  if username1 in list_of_files:
-    file1=open(username1, "r")
-    #r is for read
-    verify = file1.read().splitlines()
+  if username1 in file:
+    
+    verify = line.split(":")
     #reads file splitlines ignore the /n enter in the file
+    
     if password1 in verify: 
      Label(screen2,text="Login Sucess",fg="green",font=("calibri", 11)).pack()
+     
     else:
       Label(screen2,text="Password Not Recognised",fg="red",font=("calibri", 11)).pack()
   else:
